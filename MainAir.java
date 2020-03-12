@@ -19,8 +19,9 @@ public class MainAir {
         PasPlan.add(new PassengerPlane("Airbus A320", 3717, 10_668, 853, 149));
         PasPlan.add(new PassengerPlane("Airbus A330", 11_900, 10_000, 925, 440));
 
-        Set<CargoAirplane> CargoAir = new TreeSet<>();
-        CargoAir.add(new CargoAirplane("Boeing 747 Dreamlifter", 7800, 13_000, 878, 113_000));
+        //Set<CargoAirplane> CargoAir = new TreeSet<>();
+        //CargoAir.add(new CargoAirplane("Boeing 747 Dreamlifter", 7800, 13_000, 878, 113_000));
+        //CargoAir.add(new CargoAirplane("Boeing 777 Dreamlifter", 7800, 13_000, 878, 113_000));
 
 
         printPas(PasPlan);
