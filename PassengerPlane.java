@@ -1,13 +1,14 @@
 package by.airport;
 
 public class PassengerPlane extends Aircraft implements Comparable<PassengerPlane> {
-    public PassengerPlane(String model, int range, int height, int speed) {
-        super(model, range, height, speed);
+    public PassengerPlane(String model, int range, int height, int speed, int literKm) {
+        super(model, range, height, speed, literKm);
     }
+
     private int places;
 
-    public PassengerPlane(String model, int range, int height, int speed, int places) {
-        super(model, range, height, speed);
+    public PassengerPlane(String model, int range, int height, int speed, int literKm, int places) {
+        super(model, range, height, speed, literKm);
         this.places = places;
     }
 
@@ -16,14 +17,16 @@ public class PassengerPlane extends Aircraft implements Comparable<PassengerPlan
     }
 
 
+
     @Override
     public int compareTo(PassengerPlane o) {
-        if(o.getPlaces()> o.getPlaces())
-            return 1;
-        else if(o.getPlaces()== o.getPlaces())
+        if (getRange( )< o.getRange())
+            return -1;
+        else if (getRange() > o.getRange())
             return -1;
         else
             return 0;
 
     }
+
 }

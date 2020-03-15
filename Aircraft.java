@@ -1,16 +1,19 @@
 package by.airport;
 
-public class Aircraft {
+public class Aircraft  {
     private  String model; // название
     private int range; // дальность
     private int height; // высота
     private int speed; // скорость
+    private int literKm; //расход
 
-    public Aircraft(String model, int range, int height, int spead) {
+
+    public Aircraft(String model, int range, int height, int speed, int literKm) {
         this.model = model;
         this.range = range;
         this.height = height;
-        this.speed = spead;
+        this.speed = speed;
+        this.literKm = literKm;
     }
 
     public String getModel() {
@@ -28,4 +31,9 @@ public class Aircraft {
     public int getSpeed() {
         return speed;
     }
+    public int getLiterKm() {
+        return literKm;
+    }
+
+
 }
