@@ -29,4 +29,11 @@ public class PassengerPlane extends Aircraft implements Comparable<PassengerPlan
 
     }
 
-}
+    @Override
+    public String toString() {
+        return ( "range = " + getRange()+ " LiterKm =" + getLiterKm());
+
+
+        }
+    }
+
