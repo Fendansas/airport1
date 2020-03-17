@@ -30,4 +30,8 @@ public class CargoAirplane extends Aircraft implements Comparable<CargoAirplane>
 
 
     }
+
+    public int getWeight(int size) {
+        return getWeight();
+    }
 }
