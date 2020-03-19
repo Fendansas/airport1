@@ -41,6 +41,9 @@ public class MainAir {
         System.out.println("======================================================================================================================== ");
         printPlaces(PasPlan);
         System.out.println("======================================================================================================================== ");
+        printFuelPass(PasPlan);
+        System.out.println("======================================================================================================================== ");
+        printFuelCargo(CargoAir);
 
     }
 
@@ -76,6 +79,51 @@ public class MainAir {
         }
         System.out.println(sum);
         return planes.size();
+    }
+    private static void printFuelPass(Set<PassengerPlane> planes){
+        System.out.println("Fuel consumption");
+        int sum = 3;
+        System.out.println("Введенный параметр " + sum);
+        boolean sas = false;
+
+        for(PassengerPlane plane: planes){
+            if (sum <= plane.getLiterKm()){
+                System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s\n", "Model", "Range", "Height", "Speed", "LiterKm", "Places");
+                System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s\n", plane.getModel(), plane.getRange(), plane.getHeight(), plane.getSpeed(), plane.getLiterKm(),
+                        plane.getPlaces());
+                sas = true;
+                break;
+
+            }
+            if (sas == false){
+                System.out.println("no aircraft with these characteristics");
+                break;
+
+            }
+        }
+
+    }
+    private static void printFuelCargo(Set<CargoAirplane> planes){
+        System.out.println("Fuel consumption");
+        int sum = 3;
+        System.out.println("Введенный параметр " + sum);
+        boolean sas=false;
+
+        for(CargoAirplane plane: planes){
+            if (sum <= plane.getLiterKm()){
+                System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s\n", "Model", "Range", "Height", "Speed", "LiterKm", "Weight");
+                System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s\n", plane.getModel(), plane.getRange(), plane.getHeight(), plane.getSpeed(), plane.getLiterKm(),
+                        plane.getWeight());
+                sas = true;
+                break;
+            }
+            if  (sas == false){
+                System.out.println("no aircraft with these characteristics");
+                break;
+            }
+
+        }
+
     }
 
 
