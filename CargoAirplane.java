@@ -11,6 +11,10 @@ public class CargoAirplane extends Aircraft implements Comparable<CargoAirplane>
         this.weight = weight;
     }
 
+    public CargoAirplane() {
+        super();
+    }
+
     public int getWeight() {
         return weight;
     }

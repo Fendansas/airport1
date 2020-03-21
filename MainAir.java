@@ -44,6 +44,8 @@ public class MainAir {
         printFuelPass(PasPlan);
         System.out.println("======================================================================================================================== ");
         printFuelCargo(CargoAir);
+        System.out.println("======================================================================================================================== ");
+
 
     }
 
@@ -125,6 +127,29 @@ public class MainAir {
         }
 
     }
+    ///// Сортировака, немогу понять что я делаю не так(
+    private static void printSortSpeed(Set<CargoAirplane> planes){
+
+//for(CargoAirplane plane: planes)
+        for(int plane = 0;plane<planes.size(); plane++ ){
+            int min = planes.size();
+            int min_i = plane;
+            for (int plane1 = plane + 1; plane1<planes.size();plane1++){
+                if (planes.size() < min){
+                    min = planes.size();
+                    min_i = plane1;
+                }
+            }
+
+
+        }
+
+    }
+
+
+
+
+
 
 
 }

@@ -6,6 +6,7 @@ public class Aircraft  {
     private int height; // высота
     private int speed; // скорость
     private int literKm; //расход
+    private Airline airline;
 
 
     public Aircraft(String model, int range, int height, int speed, int literKm) {
@@ -14,6 +15,10 @@ public class Aircraft  {
         this.height = height;
         this.speed = speed;
         this.literKm = literKm;
+    }
+
+    public Aircraft() {
+
     }
 
     public String getModel() {
@@ -36,6 +41,11 @@ public class Aircraft  {
     }
 
 
+    public Airline getAirline() {
+        return airline;
+    }
 
-
+    public void setAirline(Airline airline) {
+        this.airline = airline;
+    }
 }

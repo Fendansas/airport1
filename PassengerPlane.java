@@ -12,6 +12,10 @@ public class PassengerPlane extends Aircraft implements Comparable<PassengerPlan
         this.places = places;
     }
 
+    public PassengerPlane() {
+
+    }
+
     public int getPlaces() {
         return places;
     }

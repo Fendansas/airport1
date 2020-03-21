@@ -1,11 +1,13 @@
 package by.airport;
 
-import java.util.Set;
-import java.util.SortedSet;
-
 public class Airline {
+   CargoAirplane cargoAirplane = new CargoAirplane();
+   PassengerPlane passengerPlane = new PassengerPlane();
 
-
+   public void Test(){// example
+       System.out.println(cargoAirplane.getWeight());
+    }
 
 
 }
+
