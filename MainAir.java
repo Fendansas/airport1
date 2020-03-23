@@ -11,6 +11,16 @@ import java.util.*;
 
 public class MainAir {
     public static void main(String[] args) {
+        // Test
+        Airline Air1 = new Airline(new ArrayList<PassengerPlane>(), new ArrayList<CargoAirplane>());
+        System.out.println(Air1);
+
+        //End Test
+
+
+
+
+
         Set<PassengerPlane> PasPlan = new TreeSet<>(Comparator.comparing(PassengerPlane::getRange));
         PasPlan.add(new PassengerPlane("Boeing 747", 12_100, 10_668, 917, 13, 425));
         PasPlan.add(new PassengerPlane("Boeing 737", 2518, 10_058, 793, 3, 192));
@@ -26,6 +36,7 @@ public class MainAir {
         CargoAir.add(new CargoAirplane("Fokker 27", 1900, 8_890, 480, 5, 6000));
         CargoAir.add(new CargoAirplane("MD 11", 12_800, 12_270, 880, 17, 80_000));
         CargoAir.add(new CargoAirplane("ТУ 204", 6900, 12_500, 810, 9, 28_500));
+
 
         //List<PassengerPlane> pl = new ArrayList<>();
         // pl.addAll(PasPlan);
@@ -45,6 +56,7 @@ public class MainAir {
         System.out.println("======================================================================================================================== ");
         printFuelCargo(CargoAir);
         System.out.println("======================================================================================================================== ");
+
 
 
     }
