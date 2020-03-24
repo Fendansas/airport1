@@ -13,12 +13,11 @@ public class MainAir {
     public static void main(String[] args) {
         // Test
         Airline Air1 = new Airline(new ArrayList<PassengerPlane>(), new ArrayList<CargoAirplane>());
+        //Air1.setCarg();
+
         System.out.println(Air1);
 
         //End Test
-
-
-
 
 
         Set<PassengerPlane> PasPlan = new TreeSet<>(Comparator.comparing(PassengerPlane::getRange));
@@ -61,7 +60,7 @@ public class MainAir {
 
     }
 
-    private static void printPas(Set<PassengerPlane> planes) {
+    private static void printPas(Set<PassengerPlane> planes) { //Вывод на экран отсортированный список по дфльности полета
         System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s\n", "Model", "Range", "Height", "Speed", "LiterKm", "Places");
         for (PassengerPlane plane : planes) {
             System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s\n", plane.getModel(), plane.getRange(), plane.getHeight(), plane.getSpeed(), plane.getLiterKm(),
@@ -69,85 +68,81 @@ public class MainAir {
         }
     }
 
-    private static void printCarg(Set<CargoAirplane> planes) {
+    private static void printCarg(Set<CargoAirplane> planes) { //Вывод на экран отсортированный список по дфльности полета
         System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s\n", "Model", "Range", "Height", "Speed", "literKm", "Weight");
         for (CargoAirplane plane : planes) {
             System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s\n", plane.getModel(), plane.getRange(), plane.getHeight(), plane.getSpeed(), plane.getLiterKm(), plane.getWeight());
         }
     }
 
-    private static int printWeight(Set<CargoAirplane> planes) {
+    private static int printWeight(Set<CargoAirplane> planes) { //выводит на экран общую грузоподъемность
         System.out.println("Total payload");
         int sum = 0;
         for (CargoAirplane plane : planes) {
             sum += plane.getWeight();
         }
-        System.out.println(sum);
+        System.out.println(sum+" kg");
         return planes.size();
     }
-    private static int printPlaces(Set<PassengerPlane> planes) {
+
+    private static int printPlaces(Set<PassengerPlane> planes) {//выводит на экран общее кол-во мест
         System.out.println("Total Places");
         int sum = 0;
         for (PassengerPlane plane : planes) {
             sum += plane.getPlaces();
         }
-        System.out.println(sum);
+        System.out.println(sum+" kg");
         return planes.size();
     }
-    private static void printFuelPass(Set<PassengerPlane> planes){
-        System.out.println("Fuel consumption");
-        int sum = 3;
-        System.out.println("Введенный параметр " + sum);
-        boolean sas = false;
 
-        for(PassengerPlane plane: planes){
-            if (sum <= plane.getLiterKm()){
-                System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s\n", "Model", "Range", "Height", "Speed", "LiterKm", "Places");
+    private static void printFuelPass(Set<PassengerPlane> planes) { // потребление горючего в заданном диапазоне
+        System.out.println("Fuel consumption");
+        int min = 3;
+        int max = 4;
+        System.out.println("Введенный параметр минимальный " + min + " маклимальный " + max);
+        System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s\n", "Model", "Range", "Height", "Speed", "LiterKm", "Places");
+
+        for (PassengerPlane plane : planes) {
+            if (min <= plane.getLiterKm() & plane.getLiterKm() <= max) {
                 System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s\n", plane.getModel(), plane.getRange(), plane.getHeight(), plane.getSpeed(), plane.getLiterKm(),
                         plane.getPlaces());
-                sas = true;
-                break;
-
             }
-            if (sas == false){
-                System.out.println("no aircraft with these characteristics");
-                break;
 
-            }
+
         }
 
     }
-    private static void printFuelCargo(Set<CargoAirplane> planes){
-        System.out.println("Fuel consumption");
-        int sum = 3;
-        System.out.println("Введенный параметр " + sum);
-        boolean sas=false;
 
-        for(CargoAirplane plane: planes){
-            if (sum <= plane.getLiterKm()){
-                System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s\n", "Model", "Range", "Height", "Speed", "LiterKm", "Weight");
+    private static void printFuelCargo(Set<CargoAirplane> planes) { // потребление горючего в заданном диапазоне
+        System.out.println("Fuel consumption");
+        int min = 5;
+        int max = 19;
+        System.out.println("Введенный параметр минимальный " + min + " маклимальный " + max);
+        System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s\n", "Model", "Range", "Height", "Speed", "LiterKm", "Weight");
+
+        for (CargoAirplane plane : planes) {
+            if (min <= plane.getLiterKm() & plane.getLiterKm() <= max) {
+
                 System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s\n", plane.getModel(), plane.getRange(), plane.getHeight(), plane.getSpeed(), plane.getLiterKm(),
                         plane.getWeight());
-                sas = true;
-                break;
+
+
             }
-            if  (sas == false){
-                System.out.println("no aircraft with these characteristics");
-                break;
-            }
+
 
         }
 
     }
+
     ///// Сортировака, немогу понять что я делаю не так(
-    private static void printSortSpeed(Set<CargoAirplane> planes){
+    private static void printSortSpeed(Set<CargoAirplane> planes) {
 
 //for(CargoAirplane plane: planes)
-        for(int plane = 0;plane<planes.size(); plane++ ){
+        for (int plane = 0; plane < planes.size(); plane++) {
             int min = planes.size();
             int min_i = plane;
-            for (int plane1 = plane + 1; plane1<planes.size();plane1++){
-                if (planes.size() < min){
+            for (int plane1 = plane + 1; plane1 < planes.size(); plane1++) {
+                if (planes.size() < min) {
                     min = planes.size();
                     min_i = plane1;
                 }
@@ -157,9 +152,6 @@ public class MainAir {
         }
 
     }
-
-
-
 
 
 
