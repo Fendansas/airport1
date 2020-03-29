@@ -99,7 +99,7 @@ public class MainAir {
         System.out.println("Fuel consumption");
         int min = 3;
         int max = 4;
-        System.out.println("Введенный параметр минимальный " + min + " маклимальный " + max);
+        System.out.println("Введенный параметр минимальный " + min + " макcимальный " + max);
         System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s\n", "Model", "Range", "Height", "Speed", "LiterKm", "Places");
 
         for (PassengerPlane plane : planes) {
@@ -117,7 +117,7 @@ public class MainAir {
         System.out.println("Fuel consumption");
         int min = 5;
         int max = 19;
-        System.out.println("Введенный параметр минимальный " + min + " маклимальный " + max);
+        System.out.println("Введенный параметр минимальный " + min + " макcимальный " + max);
         System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s\n", "Model", "Range", "Height", "Speed", "LiterKm", "Weight");
 
         for (CargoAirplane plane : planes) {
